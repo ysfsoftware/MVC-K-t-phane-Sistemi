@@ -1,0 +1,31 @@
+﻿@using MVCKUTUPHANE.Models.Entity
+@model List<TBLPERSONEL>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel İşlemleri</h2>
+<br />
+
+
+<table class="table table-hover">
+    <tr style="background-color:#e6a32e">
+        <th>PERSONEL ID</th>
+        <th>PERSONEL ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th></th>
+    </tr>
+    @foreach (var prs in Model)
+    {
+        <tr>
+            <td>@prs.ID</td>
+            <td>@prs.PERSONEL</td>
+            <td><a href="/Personel/Sil/@prs.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Personel/PersonelGetir/@prs.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Personel/YeniPersonel/" class="btn btn-primary">Yeni Personel Ekle</a>
+
