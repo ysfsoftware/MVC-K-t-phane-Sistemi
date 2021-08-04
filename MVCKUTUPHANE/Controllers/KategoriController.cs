@@ -27,8 +27,10 @@ namespace MVCKUTUPHANE.Controllers
         public ActionResult YeniKategori(TBLKATEGORI p)
         {
             db.TBLKATEGORI.Add(p);
+            p.DURUM = true;
             db.SaveChanges();
             MessageBox.Show("Ekleme İşlemi Tamamlandı!", "Bilgilendirme Penceresi");
+            
             return View();
         }
         public ActionResult Sil(int id)
